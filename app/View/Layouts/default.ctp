@@ -34,6 +34,13 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+	<?php // JS
+		echo $this -> Html -> script(array('jquery_1.3.2', 'jqueryui', 'easing', 'jquery.cycle.all', 'custom'));
+		// superfish
+		echo $this -> Html -> script(array('/superfish-1.4.8/js/hoverIntent', 'superfish-1.4.8/js/superfish'));
+		// css
+		echo $this -> Html -> css(array('style', 'spring'));
+	?>
 </head>
 <body>
 	<div id="container">
