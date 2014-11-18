@@ -1,11 +1,11 @@
-<?php
+<!-- <?php
 // JS
 echo $this -> Html -> script(array('jquery_1.3.2', 'jqueryui', 'easing', 'jquery.cycle.all', 'custom'));
 // superfish
 echo $this -> Html -> script(array('/superfish-1.4.8/js/hoverIntent', 'superfish-1.4.8/js/superfish'));
 // css
 echo $this -> Html -> css(array('style', 'spring'));
-?>
+?> -->
 <!-- WRAPPER -->
 <div id="wrapper">
 	<!-- navigation -->
@@ -87,7 +87,11 @@ echo $this -> Html -> css(array('style', 'spring'));
 				</div>
 				<h2 class="custom"><?php echo $article['Article']['title'] ?></h2>
 				<p>
-					<a href="gallery.html" class="more">More</a>
+					<?php echo $this -> Html -> link(
+						'More',
+						array('controller' => 'articles',),
+						array('class' => 'more'));?>
+					<!-- <a href="gallery.html" class="more">More</a> -->
 				</p>
 			</div>
 			<?php  endforeach; ?>
