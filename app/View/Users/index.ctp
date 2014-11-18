@@ -13,11 +13,12 @@
     <tr>
         <td><?php echo $user['User']['id']; ?></td>
         <td>
-            <?php echo $this->Html->link($post['User']['name'],
-            	array('controller' => 'users', 'action' => 'view', $post['User']['id'])); ?>
+            <?php echo $this->Html->link($user['User']['name'],
+            	array('controller' => 'users', 'action' => 'view', $user['User']['id'])); ?>
         </td>
-        <td><?php echo $post['User']['created']; ?></td>
+        <td><?php echo $user['User']['mail']; ?></td>
+        <td><?php echo $user['User']['password']; ?></td>
     </tr>
     <?php endforeach; ?>
-    <?php unset($post); ?>
+    <?php unset($user); ?>
 </table>
