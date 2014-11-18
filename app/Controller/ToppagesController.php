@@ -9,16 +9,4 @@ class ToppagesController extends AppController {
 		 
 		$this->set('articles',$this->Article->find('all'));
 	}
-	
-	public function view($id){
-		 if (!$id) {
-            throw new NotFoundException(__('Invalid post'));
-        }
-
-        $article = $this->Article->findById($id);
-        if (!$article) {
-            throw new NotFoundException(__('Invalid post'));
-        }
-        $this->set('article', $article);
-	}
 }
