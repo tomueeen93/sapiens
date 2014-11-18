@@ -63,7 +63,7 @@ h1{
 }
 
 h2{
-	font-size: 32px;
+	font-size: 25px;
 	line-height: 1.5em;
 	color: #665d4e;
 }
@@ -357,7 +357,7 @@ div.holder{
 }
 
 div.holder div.block{
-	width: 307px;
+	width: 300px;
 	float: left;
 	margin: 0px 18px 0px 0px;
 }
@@ -1430,10 +1430,13 @@ div#footer div.footer-bottom p.legal{
 	text-align: center;
 }
 
-
-
-
-
+/**
+ *     @author Tomoki Uekusa
+ */
+.topimage {
+    witdth:100%;
+    height:100%;
+}
 
 
 

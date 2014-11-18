@@ -1,10 +1,10 @@
 <?php
 // JS
-echo $this->Html->script(array('jquery_1.3.2', 'jqueryui', 'easing' ,'jquery.cycle.all','custom'));
+echo $this -> Html -> script(array('jquery_1.3.2', 'jqueryui', 'easing', 'jquery.cycle.all', 'custom'));
 // superfish
-echo $this->Html->script(array('/superfish-1.4.8/js/hoverIntent', 'superfish-1.4.8/js/superfish'));
+echo $this -> Html -> script(array('/superfish-1.4.8/js/hoverIntent', 'superfish-1.4.8/js/superfish'));
 // css
-echo $this->Html->css(array('style','spring'));
+echo $this -> Html -> css(array('style', 'spring'));
 ?>
 <!-- WRAPPER -->
 <div id="wrapper">
@@ -55,18 +55,18 @@ echo $this->Html->css(array('style','spring'));
 		<div id="slideshow">
 			<ul id="slides">
 				<li>
-					<?php 
-					echo $this->Html->image('slides/01.jpg', array('alt' => ''));
+					<?php
+					echo $this -> Html -> image('slides/01.jpg', array('alt' => ''));
 					?>
 				</li>
 				<li>
-					<?php 
-					echo $this->Html->image('slides/02.jpg', array('alt' => ''));
+					<?php
+					echo $this -> Html -> image('slides/02.jpg', array('alt' => ''));
 					?>
 				</li>
 				<li>
-					<?php 
-					echo $this->Html->image('slides/03.jpg', array('alt' => ''));
+					<?php
+					echo $this -> Html -> image('slides/03.jpg', array('alt' => ''));
 					?>
 				</li>
 			</ul>
@@ -78,19 +78,19 @@ echo $this->Html->css(array('style','spring'));
 		</p>
 		<!-- blocks -->
 		<div class="holder">
+			<?php foreach($articles as $article): ?>
 			<div class="block">
 				<div class="thumb-holder">
-					<a href="gallery.html"><img src="img/dummies/dummy-block1.jpg" alt="" class="thumb" /> </a>
+					<a href="gallery.html">
+						<img src="img/content_image/<?php echo $article['Article']['title_image_url'] ?>" alt="" class="thumb topimage" />
+					</a>
 				</div>
-				<h2 class="custom">RECENT ALBUMS</h2>
-				<h5 class="custom color2">IMAGES AND VIDEOS</h5>
-				<p class="thumb-text">
-					Eleifend et eu est. Aenean tortor eros, sodales at bibendum vulputate, porttitor.Vestibulum sed neque ac magna feugiat eleifend et eu est. Aenean tortor eros, sodales at bibendum vulputate, porttitor.
-				</p>
+				<h2 class="custom"><?php echo $article['Article']['title'] ?></h2>
 				<p>
 					<a href="gallery.html" class="more">More</a>
 				</p>
 			</div>
+			<?php  endforeach; ?>
 			<div class="block">
 				<div class="thumb-holder">
 					<a href="gallery.html"><img src="img/dummies/dummy-block2.jpg" alt="" class="thumb" /> </a>
@@ -258,8 +258,6 @@ echo $this->Html->css(array('style','spring'));
 </div>
 <!-- ENDS FOOTER -->
 <!-- start cufon -->
-<script type="text/javascript">
-Cufon.now();
-</script>
+<script type="text/javascript">Cufon.now();</script>
 <!-- ENDS start cufon -->
 </body>
