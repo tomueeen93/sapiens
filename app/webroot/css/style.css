@@ -358,6 +358,7 @@ div.holder{
 
 div.holder div.block{
 	width: 300px;
+	height: 250px;
 	float: left;
 	margin: 0px 18px 0px 0px;
 }
