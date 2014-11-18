@@ -1,3 +1,4 @@
+<?php
 class ArticlesController extends AppController {
     public $helpers = array('Html', 'Form');
 
@@ -5,3 +6,4 @@ class ArticlesController extends AppController {
         $this->set('articles', $this->Article->find('all'));
     }
 }
+?>

@@ -1,3 +1,4 @@
+<?php
 class CommentsController extends AppController {
     public $helpers = array('Html', 'Form');
 
@@ -5,3 +6,4 @@ class CommentsController extends AppController {
         $this->set('comments', $this->Comment->find('all'));
     }
 }
+?>
