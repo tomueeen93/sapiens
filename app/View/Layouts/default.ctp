@@ -34,19 +34,20 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
-	<?php 
+		<?php 
 		// JS
-		echo $this -> Html -> script(array('jquery_1.3.2', 'jqueryui', 'easing', 'jquery.cycle.all', 'custom'));
+		// echo $this -> Html -> script(array('jquery_1.3.2', 'jqueryui', 'easing', 'jquery.cycle.all', 'custom'),array('inline'=>false));
 		// superfish
-		echo $this -> Html -> script(array('/superfish-1.4.8/js/hoverIntent', 'superfish-1.4.8/js/superfish'));
+		// echo $this -> Html -> script(array('superfish-1.4.8/js/hoverIntent', 'superfish-1.4.8/js/superfish'),array('inline'=>false));
 		// css
 		echo $this -> Html -> css(array('style', 'spring'));
-		// Cofon
-		echo $this -> Html -> script(array('cufon-yui.js', 'bebas_400.font.js'));
+		// Cufon
+		// echo $this -> Html -> script(array('cufon-yui.js', 'bebas_400.font.js'),array('inline'=>false));
 	?>
 	<!-- <script type="text/javascript">Cufon.replace('.custom', { fontFamily: 'bebas', hover: true });</script> -->
 </head>
 <body>
+	
 	<div id="container">
 		<div id="header">
 			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>

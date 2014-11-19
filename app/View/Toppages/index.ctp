@@ -1,13 +1,14 @@
-<!-- 
 <?php
 // JS
 echo $this -> Html -> script(array('jquery_1.3.2', 'jqueryui', 'easing', 'jquery.cycle.all', 'custom'));
 // superfish
 echo $this -> Html -> script(array('/superfish-1.4.8/js/hoverIntent', 'superfish-1.4.8/js/superfish'));
 // css
-echo $this -> Html -> css(array('style', 'spring'));
+//echo $this -> Html -> css(array('style', 'spring'));
+// cufon
+echo $this -> Html -> script(array('cufon-yui.js', 'bebas_400.font.js'),array('inline'=>false));
 ?> 
--->
+
 <!-- WRAPPER -->
 <div id="wrapper">
 	<!-- navigation -->
@@ -83,16 +84,26 @@ echo $this -> Html -> css(array('style', 'spring'));
 			<?php foreach($articles as $article): ?>
 			<div class="block">
 				<div class="thumb-holder">
-					<a href="gallery.html">
+					<?php
+					echo $this->Html->link(
+							$this->Html->image(
+								array("content_image",$article['Article']['title_image_url']),
+								array("alt" => "",'class' => 'topimage')),
+							array('controller'=>'articles','action'=>'index',$article['Article']['id']),
+							array('escape' => false)
+					);
+					?>
+					<!-- <a href="gallery.html">
 						<img src="img/content_image/<?php echo $article['Article']['title_image_url'] ?>" alt="" class="thumb topimage" />
-					</a>
+					</a> -->
 				</div>
 				<h2 class="custom"><?php echo $article['Article']['title'] ?></h2>
 				<p>
 					<?php echo $this -> Html -> link(
 						'More',
 						array('controller' => 'articles', $article['Article']['id']),
-						array('class' => 'more'));?>
+						array('class' => 'more'));
+					?>
 					<!-- <a href="gallery.html" class="more">More</a> -->
 				</p>
 			</div>
