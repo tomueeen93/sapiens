@@ -1,3 +1,13 @@
+<?php
+// JS
+echo $this -> Html -> script(array('jquery_1.3.2', 'jqueryui', 'easing', 'jquery.cycle.all', 'custom'));
+// superfish
+echo $this -> Html -> script(array('/superfish-1.4.8/js/hoverIntent', 'superfish-1.4.8/js/superfish'));
+// css
+//echo $this -> Html -> css(array('style', 'spring'));
+// cufon
+echo $this -> Html -> script(array('cufon-yui.js', 'bebas_400.font.js'),array('inline'=>false));
+?> 
 <!-- MAIN -->
   <div id="main">
     <!-- posts -->
