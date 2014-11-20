@@ -79,7 +79,7 @@ ul.pager li:last-child{
 /* HEADER ------------------------------------------------------------*/
 
 div#header{
-	background: url(../img/spring/top-bg.png) no-repeat;
+	/*background: url(../img/spring/top-bg.png) no-repeat;*/
 }
 
 ul#nav li a{
@@ -116,9 +116,4 @@ div#footer div.footer-cols ul li:first-child a{
 div#footer div.footer-bottom p.legal{
 	color: #b8b6aa;
 }
-
-
-
-
-
 
