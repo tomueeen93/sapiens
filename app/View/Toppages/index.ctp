@@ -6,13 +6,35 @@ echo $this -> Html -> script(array('/superfish-1.4.8/js/hoverIntent', 'superfish
 // css
 //echo $this -> Html -> css(array('style', 'spring'));
 // cufon
-echo $this -> Html -> script(array('cufon-yui.js', 'bebas_400.font.js'),array('inline'=>false));
+echo $this -> Html -> script(array('cufon-yui.js', 'bebas_400.font.js'), array('inline' => false));
 ?> 
 
+<!-- slideshow -->
+<div id="slideshow">
+	<ul id="slides">
+		<li>
+			<?php
+			echo $this -> Html -> image('slides/01.jpg', array('alt' => '', 'class' => 'slide_image','width'=>'100vw'));
+			?>
+		</li>
+		<li>
+			<?php
+			echo $this -> Html -> image('slides/02.jpg', array('alt' => '','class' => 'slide_image','width'=>'100vw'));
+			?>
+		</li>
+		<li>
+			<?php
+			echo $this -> Html -> image('slides/03.jpg', array('alt' => '','class' => 'slide_image','width'=>'100vw'));
+			?>
+		</li>
+	</ul>
+	<a href="#"><img src="img/prev-slide.png" alt="" id="prev" /></a><a href="#"><img src="img/next-slide.png" alt="" id="next" /></a>
+</div>
+<!-- ENDS slideshow -->
 <!-- WRAPPER -->
 <div id="wrapper">
 	<!-- navigation -->
-	<ul id="nav" class="sf-menu">
+	<!-- <ul id="nav" class="sf-menu">
 		<li class="custom">
 			<a href="contact.html">CONTACT</a>
 		</li>
@@ -36,10 +58,10 @@ echo $this -> Html -> script(array('cufon-yui.js', 'bebas_400.font.js'),array('i
 				</li>
 			</ul>
 		</li>
-	</ul>
+	</ul> -->
 	<!-- ENDS navigation -->
 	<!-- HEADER -->
-	<div id="header">
+	<!-- <div id="header">
 		<a href="index.html"><img src="img/logo.png" alt="" id="logo" /></a><img src="img/nav-arrow.png" alt="" id="arrow" class="arrow-home" />
 		<form action="#" method="post" id="search">
 			<p>
@@ -50,60 +72,26 @@ echo $this -> Html -> script(array('cufon-yui.js', 'bebas_400.font.js'),array('i
 			</p>
 			<div class="clear"></div>
 		</form>
-	</div>
+	</div> -->
 	<!-- ENDS HEADER -->
+	
 	<!-- MAIN -->
 	<div id="main">
-		<!-- slideshow -->
-		<div id="slideshow">
-			<ul id="slides">
-				<li>
-					<?php
-					echo $this -> Html -> image('slides/01.jpg', array('alt' => ''));
-					?>
-				</li>
-				<li>
-					<?php
-					echo $this -> Html -> image('slides/02.jpg', array('alt' => ''));
-					?>
-				</li>
-				<li>
-					<?php
-					echo $this -> Html -> image('slides/03.jpg', array('alt' => ''));
-					?>
-				</li>
-			</ul>
-			<span></span><a href="#"><img src="img/prev-slide.png" alt="" id="prev" /></a><a href="#"><img src="img/next-slide.png" alt="" id="next" /></a>
-		</div>
-		<!-- ENDS slideshow -->
-		<p class="custom excerpt">
-			Four different skins: <a href="#">Spring</a>, <a href="#">Summer </a>, <a href="#">Autumn</a>, and <a href="#">Winter. </a>
-		</p>
 		<!-- blocks -->
 		<div class="holder">
 			<?php foreach($articles as $article): ?>
 			<div class="block">
 				<div class="thumb-holder">
 					<?php
-					echo $this->Html->link(
-							$this->Html->image(
-								$article['Article']['title_image_url'],
-								array("alt" => "",'class' => 'topimage','width'=>'301px','height'=>'116px')),
-							array('controller'=>'articles','action'=>'index',$article['Article']['id']),
-							array('escape' => false)
-					);
+					echo $this -> Html -> link($this -> Html -> image($article['Article']['title_image_url'], array("alt" => "", 'class' => 'topimage block', 'width' => '301px', 'height' => '116px')), array('controller' => 'articles', 'action' => 'index', $article['Article']['id']), array('escape' => false));
 					?>
 					<!-- <a href="gallery.html">
 						<img src="img/content_image/<?php echo $article['Article']['title_image_url'] ?>" alt="" class="thumb topimage" />
 					</a> -->
 				</div>
-				<h2 class="custom"><?php echo $article['Article']['title'] ?></h2>
+				<h2 class="custom block"><?php echo $article['Article']['title'] ?></h2>
 				<p>
-					<?php echo $this -> Html -> link(
-						'More',
-						array('controller' => 'articles', $article['Article']['id']),
-						array('class' => 'more'));
-					?>
+					<?php echo $this -> Html -> link('More', array('controller' => 'articles', $article['Article']['id']), array('class' => 'more block')); ?>
 					<!-- <a href="gallery.html" class="more">More</a> -->
 				</p>
 			</div>

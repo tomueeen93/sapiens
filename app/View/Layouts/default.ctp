@@ -14,7 +14,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = __d('cake_dev', 'Sapiens');
+$cakeDescription = __d('cake_dev', 'sapiens');
 $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 ?>
 <!DOCTYPE html>
@@ -50,7 +50,32 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
+			<div class="left">
+				<!--
+				<?php
+					echo $this->Html->link(
+							$this->Html->image(
+								'logo.png',
+								array("alt" => '','id'=>'logo')),
+							array('controller'=>'toppages','action'=>'index'));
+				?>
+				-->
+				<a href="index.html"><img src="img/logo.png" alt="" id="logo" /></a><img src="img/nav-arrow.png" alt="" id="arrow" class="arrow-home" />
+			</div>
+			<div class="center">
+				
+			</div>
+			<div class="right">
+				<form action="#" method="post" id="search">
+						<p>
+							<input type="text" onfocus="defaultInput(this)" onblur="clearInput(this)" name="keyword" id="keyword" value="Search..." />
+						</p>
+						<p>
+							<input type="submit" id="go" value="" />
+						</p>
+						<div class="clear"></div>
+				</form>
+			</div>
 		</div>
 		<div id="content">
 
