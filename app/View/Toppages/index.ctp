@@ -87,8 +87,8 @@ echo $this -> Html -> script(array('cufon-yui.js', 'bebas_400.font.js'),array('i
 					<?php
 					echo $this->Html->link(
 							$this->Html->image(
-								array("content_image",$article['Article']['title_image_url']),
-								array("alt" => "",'class' => 'topimage')),
+								$article['Article']['title_image_url'],
+								array("alt" => "",'class' => 'topimage','width'=>'301px','height'=>'116px')),
 							array('controller'=>'articles','action'=>'index',$article['Article']['id']),
 							array('escape' => false)
 					);
