@@ -51,19 +51,29 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<div id="container">
 		<div id="header">
 			<div class="left">
-				<!--
+				<div id="logo">
 				<?php
 					echo $this->Html->link(
 							$this->Html->image(
 								'logo.png',
-								array("alt" => '','id'=>'logo')),
-							array('controller'=>'toppages','action'=>'index'));
+								array('alt' => '','id'=>'logo')
+							),
+							array('controller'=>'toppages','action'=>'index'),
+							array('escape' => false)
+					);
 				?>
-				-->
-				<a href="index.html"><img src="img/logo.png" alt="" id="logo" /></a><img src="img/nav-arrow.png" alt="" id="arrow" class="arrow-home" />
+				<!-- <a href="index.html"><img src="img/logo.png" alt="" id="logo" /></a><img src="img/nav-arrow.png" alt="" id="arrow" class="arrow-home" /> -->
+					
+				</div>
 			</div>
-			<div class="center">
-				
+			<div id="center-nav">
+				<?php if($logged_in): ?>
+					<p>Welcome</p><?php echo $users_username; ?> <?php echo $this->Html->link('Logout',array('controller'=>'users','action'=>'logout')); ?>
+				<?php else: ?>
+					<?php echo $this->Html->link('Register',array('controller'=>'Users','action'=>'add')); ?>
+					<?php echo $this->Html->link('Login',array('controller'=>'Users','action'=>'login')); ?>
+				<?php endif; ?>
+					
 			</div>
 			<div class="right">
 				<form action="#" method="post" id="search">

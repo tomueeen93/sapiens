@@ -1507,5 +1507,11 @@ div#slides li img{
 div#slideshow img#next {
 right: 0.5px;
 }
-
+div#center-nav{
+    height:100%;
+    width:30%;
+    position:absolute;
+    top:0px;
+    left:50%;
+}
 
