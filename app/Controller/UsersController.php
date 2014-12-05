@@ -59,49 +59,6 @@ class UsersController extends AppController {
 		$this -> redirect(array('action' => 'index'));
 	}
 
-	// public function login() {
-		// if ($this -> request -> is('post')) {
-			// if ($this -> Auth -> login()) {
-				// $this -> redirect($this -> Auth -> redirect());
-			// } else {
-				// $this -> Session -> setFlash(__('Invalid username or password, try again'));
-			// }
-		// }
-	// }
-
-	// public function logout() {
-		// $this -> redirect($this -> Auth -> logout());
-	// }
-	/*
-	 * WEBコピー
-	 */
-	 
-	// public function beforeFilter(){//login処理の設定
-			// parent::beforeFilter();
-		 	// $this->Auth->allow('login','logout','useradd','add');//ログインしないで、アクセスできるアクションを登録する
-		 	// $this->set('user',$this->Auth->user()); // ctpで$userを使えるようにする 。
-	// }
-	
-	// public function login() {//ログイン
-		// if ($this -> request -> is('post')) {//POST送信なら
-			// if ($this -> Auth -> login()) {//ログイン成功なら
-				// //$this->Session->delete('Auth.redirect'); //前回ログアウト時のリンクを記録させない
-				// return $this -> redirect($this -> Auth -> redirect());
-				// //Auth指定のログインページへ移動
-			// } else {//ログイン失敗なら
-				// $this -> Session -> setFlash(__('ユーザ名かパスワードが違います'),'default',array());
-			// }
-		// }
-	// }
-
-	// public function logout() {
-		// $this -> Auth -> logout();
-		// $this -> Session -> destroy();
-		// //セッションを完全削除
-		// $this -> Session -> setFlash(__('ログアウトしました'));
-		// $this -> redirect(array('action' => 'login'));
-	// }
-
 	public function useradd() {
 		//POST送信なら
 		if ($this -> request -> is('post')) {
@@ -134,11 +91,11 @@ class UsersController extends AppController {
 		);
 		
 		if($this->action == 'add' || $this->action == 'edit'){
-			// $this->Auth->authenticate=array(
-				// 'Form'=>array(
-					// 'userModel'=>'User'
-				// )
-			// );
+			$this->Auth->authenticate=array(
+				'Form'=>array(
+					'userModel'=>'User'
+				)
+			);
 		}
 	 }
 	 
